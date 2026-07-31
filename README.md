@@ -1,15 +1,28 @@
-# ChooseOneAnswer.com V3
+# ChooseOneAnswer.com — Exact Screenshot Layout
 
-This version uses the new segmented circular logo with the number 1.
+This version closely recreates the supplied reference image:
 
-## Replace in VS Code
-- index.html
-- styles.css
-- script.js
+- Three-column desktop dashboard
+- Segmented “1” logo
+- Left hero panel
+- Central interactive quiz card
+- Social-content cards on the right
+- Community links
+- Newsletter box
+- Bottom feature strip
+- Responsive tablet and mobile layouts
+
+## Use in VS Code
+1. Extract the ZIP.
+2. Replace your current files with:
+   - `index.html`
+   - `styles.css`
+   - `script.js`
+3. Open `index.html` using Live Server.
 
 ## Publish
 ```bash
 git add .
-git commit -m "Add new Choose One Answer logo"
+git commit -m "Match the reference dashboard design"
 git push
 ```
