@@ -1,113 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Choose one answer from four options and test your knowledge." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Choose one answer from four options and test your knowledge every day.">
   <title>Choose One Answer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#">Choose<span>One</span>Answer</a>
-    <nav>
-      <a href="#quiz">Play</a>
+    <a class="brand" href="#home" aria-label="Choose One Answer home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M13 11h38a8 8 0 0 1 8 8v23a8 8 0 0 1-8 8H31L18 59v-9h-5a8 8 0 0 1-8-8V19a8 8 0 0 1 8-8Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M32 21v20" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="32" cy="48" r="4" fill="currentColor"/>
+        </svg>
+      </span>
+      <span>Choose <strong>One</strong> Answer</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a class="active" href="#home">Home</a>
       <a href="#categories">Categories</a>
+      <a href="#daily">Daily Quiz</a>
+      <a href="#community">Community</a>
       <a href="#about">About</a>
     </nav>
+
+    <a class="header-button" href="#daily">Play now</a>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="home">
+    <section class="hero section-shell">
       <div class="hero-copy">
-        <p class="eyebrow">Daily knowledge challenge</p>
-        <h1>One question.<br><span>One correct answer.</span></h1>
-        <p class="hero-text">
-          Test your knowledge with quick multiple-choice questions inspired by the
-          same format used in TikTok, Facebook Reels, Instagram Reels, and YouTube Shorts.
+        <p class="eyebrow">Quick knowledge challenges</p>
+        <h1>Choose <span>One</span><br>Answer.</h1>
+        <p class="hero-intro">
+          One question. Four possibilities. One correct answer.
+          Test yourself, learn something new, and come back every day.
         </p>
-        <a class="primary-button" href="#quiz">Play now</a>
+
+        <div class="hero-actions">
+          <a class="primary-button" href="#daily">Start the quiz</a>
+          <a class="secondary-button" href="#social">Follow our content</a>
+        </div>
+
+        <div class="mini-stats">
+          <div><strong>10 sec</strong><span>per question</span></div>
+          <div><strong>6+</strong><span>categories</span></div>
+          <div><strong>Daily</strong><span>new challenge</span></div>
+        </div>
       </div>
 
-      <section class="quiz-shell" id="quiz" aria-live="polite">
-        <div class="quiz-header">
-          <span class="category-pill" id="categoryLabel">Science</span>
+      <section class="quiz-card" id="daily" aria-live="polite">
+        <div class="quiz-top">
+          <span class="category-badge" id="categoryLabel">Science</span>
           <span id="questionCounter">Question 1 of 6</span>
         </div>
 
-        <div class="timer-row">
-          <span>Choose before time runs out</span>
-          <strong id="timer">10</strong>
+        <div class="quiz-question-row">
+          <div>
+            <p class="question-label">Choose the correct answer</p>
+            <h2 id="questionText">Which planet is known as the Red Planet?</h2>
+          </div>
+          <div class="planet-art" id="questionArt" aria-hidden="true">🪐</div>
         </div>
-
-        <div class="timer-track">
-          <div class="timer-fill" id="timerFill"></div>
-        </div>
-
-        <h2 id="questionText">Which planet is known as the Red Planet?</h2>
 
         <div class="answer-grid" id="answerGrid"></div>
 
-        <div class="feedback-box" id="feedbackBox">
-          <p id="feedbackTitle">Choose one answer.</p>
-          <small id="explanationText">The correct answer will be revealed after your choice.</small>
+        <div class="quiz-progress-row">
+          <div class="timer-copy">
+            <span>Time left</span>
+            <strong><span id="timer">10</span> sec</strong>
+          </div>
+          <div class="timer-track">
+            <div class="timer-fill" id="timerFill"></div>
+          </div>
         </div>
 
-        <button class="next-button" id="nextButton" disabled>Next question →</button>
+        <div class="feedback-box">
+          <strong id="feedbackTitle">Choose one answer.</strong>
+          <p id="explanationText">The answer and explanation will appear here.</p>
+        </div>
+
+        <button class="next-button" id="nextButton" disabled>Next question</button>
       </section>
     </section>
 
-    <section class="categories-section" id="categories">
-      <div class="section-heading">
-        <p class="eyebrow">Explore</p>
-        <h2>Quiz categories</h2>
+    <section class="features section-shell" id="categories">
+      <article><span class="feature-icon">⚡</span><div><h3>Daily Quiz</h3><p>A fresh question every day.</p></div></article>
+      <article><span class="feature-icon">▦</span><div><h3>Many Categories</h3><p>Science, history, geography, sport, and more.</p></div></article>
+      <article><span class="feature-icon">◎</span><div><h3>Challenge Others</h3><p>Share questions and compare answers.</p></div></article>
+      <article><span class="feature-icon">↗</span><div><h3>Learn & Improve</h3><p>Every answer comes with an explanation.</p></div></article>
+    </section>
+
+    <section class="content-grid section-shell" id="about">
+      <div class="about-panel">
+        <p class="eyebrow">Our brand</p>
+        <h2>Simple questions.<br>Meaningful learning.</h2>
+        <p>Choose One Answer is a social knowledge brand built for websites, TikTok, Facebook, Instagram, YouTube Shorts, and X.</p>
+
+        <div class="brand-values">
+          <div><span>◎</span><strong>Focus</strong></div>
+          <div><span>✓</span><strong>Accuracy</strong></div>
+          <div><span>✦</span><strong>Knowledge</strong></div>
+          <div><span>◉</span><strong>Community</strong></div>
+        </div>
       </div>
 
-      <div class="category-grid">
-        <article class="category-card"><span>🔬</span><h3>Science</h3><p>Physics, biology, space, and discoveries.</p></article>
-        <article class="category-card"><span>🌍</span><h3>Geography</h3><p>Countries, capitals, landmarks, and maps.</p></article>
-        <article class="category-card"><span>🏛️</span><h3>History</h3><p>Important people, dates, and civilizations.</p></article>
-        <article class="category-card"><span>⚽</span><h3>Sport</h3><p>Teams, competitions, athletes, and records.</p></article>
-        <article class="category-card"><span>🐾</span><h3>Animals</h3><p>Wildlife, nature, and surprising facts.</p></article>
-        <article class="category-card"><span>💻</span><h3>Technology</h3><p>Computers, inventions, internet, and AI.</p></article>
+      <div class="social-preview" id="social">
+        <p class="eyebrow">Our content</p>
+        <h2>Made for every social platform.</h2>
+        <div class="shorts-grid">
+          <article class="short-card space"><span>SCIENCE</span><h3>Which planet is known as the Red Planet?</h3><small>Choose A, B, C or D</small></article>
+          <article class="short-card mountain"><span>GEOGRAPHY</span><h3>Which is the tallest mountain in the world?</h3><small>Think fast</small></article>
+          <article class="short-card history"><span>HISTORY</span><h3>In which country are the Pyramids of Giza?</h3><small>Comment your answer</small></article>
+          <article class="short-card ocean"><span>NATURE</span><h3>Which is the largest ocean on Earth?</h3><small>One correct answer</small></article>
+        </div>
       </div>
     </section>
 
-    <section class="shorts-section">
+    <section class="community section-shell" id="community">
       <div>
-        <p class="eyebrow">Made for short videos</p>
-        <h2>One question can become content everywhere.</h2>
-        <p>
-          Every question can be reused as a vertical video: question, four answers,
-          countdown, correct-answer reveal, and a short explanation.
-        </p>
+        <p class="eyebrow">Join the community</p>
+        <h2>Learn, choose, and share.</h2>
+        <p>Follow the daily challenge on the platform you use most.</p>
       </div>
 
-      <div class="phone-preview">
-        <div class="phone-top">CHOOSE ONE ANSWER</div>
-        <div class="phone-question">Which ocean is the largest?</div>
-        <div class="phone-option">A. Atlantic Ocean</div>
-        <div class="phone-option correct">B. Pacific Ocean</div>
-        <div class="phone-option">C. Indian Ocean</div>
-        <div class="phone-option">D. Arctic Ocean</div>
-        <div class="phone-footer">Did you get it right?</div>
+      <div class="social-links">
+        <a href="https://www.tiktok.com/@chooseoneanswer" target="_blank" rel="noopener noreferrer"><span>♪</span>TikTok</a>
+        <a href="https://www.facebook.com/chooseoneanswer" target="_blank" rel="noopener noreferrer"><span>f</span>Facebook</a>
+        <a href="https://www.instagram.com/chooseone.answer" target="_blank" rel="noopener noreferrer"><span>◎</span>Instagram</a>
+        <a href="https://www.youtube.com/@chooseoneanswer" target="_blank" rel="noopener noreferrer"><span>▶</span>YouTube</a>
+        <a href="https://x.com/chooseoneanswer" target="_blank" rel="noopener noreferrer"><span>𝕏</span>X</a>
       </div>
-    </section>
-
-    <section class="about-section" id="about">
-      <p class="eyebrow">About</p>
-      <h2>Learn something new in seconds.</h2>
-      <p>
-        ChooseOneAnswer.com is a fast quiz platform where every challenge has one
-        question, four possible answers, and one correct choice.
-      </p>
     </section>
   </main>
 
-  <footer>© 2026 ChooseOneAnswer.com</footer>
+  <footer>
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M13 11h38a8 8 0 0 1 8 8v23a8 8 0 0 1-8 8H31L18 59v-9h-5a8 8 0 0 1-8-8V19a8 8 0 0 1 8-8Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M32 21v20" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="32" cy="48" r="4" fill="currentColor"/>
+        </svg>
+      </span>
+      <span>Choose <strong>One</strong> Answer</span>
+    </a>
+    <p>© 2026 ChooseOneAnswer.com</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

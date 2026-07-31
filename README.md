@@ -1,28 +1,26 @@
-# ChooseOneAnswer.com
+# ChooseOneAnswer.com — Modern Website
 
-A responsive multiple-choice quiz website designed for the same content format used on TikTok, Facebook Reels, Instagram Reels, and YouTube Shorts.
+Bright, modern, responsive website for a social knowledge brand.
 
-## Main concept
-- One question
-- Four possible answers
-- One correct answer
-- Ten-second countdown
-- Correct-answer reveal
-- Short explanation
-
-## Files
-- `index.html`
-- `styles.css`
-- `script.js`
+## Included
+- Original speech-bubble logo
+- Purple brand identity
+- Interactive four-answer quiz
+- Ten-second timer
+- Answer feedback and explanations
+- Categories and feature sections
+- Social-content preview
+- TikTok, Facebook, Instagram, YouTube, and X links
+- Mobile responsive design
 
 ## Use in VS Code
-Replace the old files in your ChooseOneAnswer project with these files, then open `index.html` using Live Server.
+1. Extract the ZIP.
+2. Replace your current project files.
+3. Open `index.html` with Live Server.
 
 ## Publish
-Run:
-
 ```bash
 git add .
-git commit -m "Convert site to multiple-choice quiz format"
+git commit -m "Add new Choose One Answer design"
 git push
 ```
