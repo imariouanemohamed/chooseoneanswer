@@ -36,7 +36,7 @@
       <a href="#about">About</a>
     </nav>
 
-    <a class="play-button" href="#daily">Play now <span>⚡</span></a>
+    <div class="header-actions"><button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch color theme">◐</button><a class="play-button" href="#daily">Start Quiz <span>⚡</span></a></div>
   </header>
 
   <main id="home">
@@ -51,7 +51,7 @@
 
         <div class="hero-actions">
           <a class="primary-action" href="#daily">Start the quiz <span>→</span></a>
-          <a class="secondary-action" href="#categories">Explore categories</a>
+          <a class="secondary-action" href="#categories">Browse Categories</a>
         </div>
 
         <div class="quick-stats">
@@ -121,7 +121,7 @@
 
       <aside class="right-panel" id="social">
         <section class="social-focus">
-          <h3>FOLLOW OUR CONTENT</h3>
+          <h3>FOLLOW US</h3>
           <p>Choose your favorite platform and follow the daily challenge.</p>
 
           <div class="social-layout">
@@ -158,7 +158,7 @@
         </section>
 
         <section class="community-block">
-          <h3>JOIN OUR COMMUNITY</h3>
+          <h3>JOIN THE COMMUNITY</h3>
           <p>
             Follow, answer, comment, and challenge your friends.
             New questions will be shared across all our social platforms.
@@ -168,7 +168,7 @@
         <section class="newsletter">
           <div class="mail-icon">✉</div>
           <div class="newsletter-copy">
-            <strong>Stay in the loop!</strong>
+            <strong>Never miss a new challenge</strong>
             <p>Get daily quizzes and updates straight to your inbox.</p>
             <form id="newsletterForm">
               <input type="email" placeholder="Your email address" aria-label="Your email address" required>
@@ -186,6 +186,38 @@
       <article><span class="feature-circle yellow-bg">🔥</span><div><strong>Fun & Engaging</strong><p>Short quizzes, exciting topics, and endless learning.</p></div></article>
       <article><span class="feature-circle blue-bg">◆</span><div><strong>Reliable & Accurate</strong><p>High-quality questions reviewed for clarity.</p></div></article>
     </section>
+
+
+    <section class="extra-section" id="categories">
+      <div class="extra-heading">
+        <p class="extra-eyebrow">EXPLORE TOPICS</p>
+        <h2>Choose your category</h2>
+        <p>Select a topic and jump directly to a related quiz question.</p>
+      </div>
+      <div class="category-browser">
+        <button data-category="Science"><span>🔬</span><strong>Science</strong><small>Space, biology, and physics</small></button>
+        <button data-category="Geography"><span>🌍</span><strong>Geography</strong><small>Countries, capitals, and landmarks</small></button>
+        <button data-category="History"><span>🏛️</span><strong>History</strong><small>People, dates, and civilizations</small></button>
+        <button data-category="Sport"><span>⚽</span><strong>Sport</strong><small>Teams, athletes, and records</small></button>
+        <button data-category="Animals"><span>🐾</span><strong>Animals</strong><small>Wildlife and nature</small></button>
+        <button data-category="Technology"><span>💻</span><strong>Technology</strong><small>Computers, the internet, and AI</small></button>
+      </div>
+    </section>
+
+    <section class="leaderboard-section" id="leaderboard">
+      <div class="extra-heading">
+        <p class="extra-eyebrow">WEEKLY RANKING</p>
+        <h2>Top quiz players</h2>
+        <p>A preview of the community leaderboard planned for the full platform.</p>
+      </div>
+      <div class="leaderboard-card">
+        <div class="leader-row champion"><span>1</span><div><strong>QuizMaster</strong><small>48 correct answers</small></div><b>980 pts</b></div>
+        <div class="leader-row"><span>2</span><div><strong>BrightMind</strong><small>45 correct answers</small></div><b>930 pts</b></div>
+        <div class="leader-row"><span>3</span><div><strong>FactHunter</strong><small>41 correct answers</small></div><b>870 pts</b></div>
+        <div class="leader-row"><span>4</span><div><strong>DailyLearner</strong><small>39 correct answers</small></div><b>820 pts</b></div>
+      </div>
+    </section>
+
   </main>
 
   <script src="script.js"></script>

@@ -1,31 +1,32 @@
-# ChooseOneAnswer.com — Exact Screenshot Layout
+# ChooseOneAnswer.com — Premium English Website
 
-This version closely recreates the supplied reference image:
+This release is fully in English and includes:
 
-- Three-column desktop dashboard
-- Segmented “1” logo
-- Left hero panel
-- Central interactive quiz card
-- Social-content cards on the right
-- Community links
-- Newsletter box
-- Bottom feature strip
-- Responsive tablet and mobile layouts
+- Interactive timed quiz
+- Responsive three-column homepage
+- Reorganized social network links
+- Updated Facebook and X URLs
+- Newsletter form
+- Category browser
+- Leaderboard preview
+- Light and dark appearance toggle
+- Mobile and tablet layouts
+
+## Social links
+
+- Facebook: https://www.facebook.com/profile.php?id=61592314457725
+- X: https://x.com/ChooseoneAnswr
 
 ## Use in VS Code
-1. Extract the ZIP.
-2. Replace your current files with:
-   - `index.html`
-   - `styles.css`
-   - `script.js`
-3. Open `index.html` using Live Server.
+
+1. Extract the ZIP file.
+2. Replace `index.html`, `styles.css`, `script.js`, and `README.md`.
+3. Open `index.html` with Live Server.
 
 ## Publish
+
 ```bash
 git add .
-git commit -m "Match the reference dashboard design"
+git commit -m "Launch premium English website"
 git push
 ```
-
-
-Updated: social content preview cards were removed and the platform links were reorganized into one featured TikTok card above four secondary platform cards.
