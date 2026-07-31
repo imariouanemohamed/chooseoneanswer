@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Choose one answer, reveal the result, and challenge your friends." />
+  <meta name="description" content="Choose one answer from four options and test your knowledge." />
   <title>Choose One Answer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/">Choose<span>One</span>Answer</a>
+    <a class="brand" href="#">Choose<span>One</span>Answer</a>
     <nav>
-      <a href="#play">Play</a>
+      <a href="#quiz">Play</a>
       <a href="#categories">Categories</a>
       <a href="#about">About</a>
     </nav>
@@ -23,85 +23,91 @@
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Quick questions. One choice.</p>
-        <h1>Choose one answer.<br><span>Then see what others picked.</span></h1>
+        <p class="eyebrow">Daily knowledge challenge</p>
+        <h1>One question.<br><span>One correct answer.</span></h1>
         <p class="hero-text">
-          Fun, surprising, and thought-provoking questions you can answer in seconds.
+          Test your knowledge with quick multiple-choice questions inspired by the
+          same format used in TikTok, Facebook Reels, Instagram Reels, and YouTube Shorts.
         </p>
-        <a class="primary-button" href="#play">Start choosing</a>
+        <a class="primary-button" href="#quiz">Play now</a>
       </div>
 
-      <div class="demo-card" id="play">
-        <div class="card-top">
-          <span class="category-pill">Would You Rather?</span>
-          <span id="questionNumber">1 / 5</span>
+      <section class="quiz-shell" id="quiz" aria-live="polite">
+        <div class="quiz-header">
+          <span class="category-pill" id="categoryLabel">Science</span>
+          <span id="questionCounter">Question 1 of 6</span>
         </div>
 
-        <h2 id="questionText">Which would you choose?</h2>
-
-        <div class="answers">
-          <button class="answer-button" data-answer="a">
-            <span class="answer-label">A</span>
-            <span id="answerAText">Travel anywhere for free</span>
-            <span class="percentage" id="percentA"></span>
-          </button>
-
-          <button class="answer-button" data-answer="b">
-            <span class="answer-label">B</span>
-            <span id="answerBText">Never pay for food again</span>
-            <span class="percentage" id="percentB"></span>
-          </button>
+        <div class="timer-row">
+          <span>Choose before time runs out</span>
+          <strong id="timer">10</strong>
         </div>
 
-        <p class="result-message" id="resultMessage">Pick one answer to reveal the results.</p>
+        <div class="timer-track">
+          <div class="timer-fill" id="timerFill"></div>
+        </div>
+
+        <h2 id="questionText">Which planet is known as the Red Planet?</h2>
+
+        <div class="answer-grid" id="answerGrid"></div>
+
+        <div class="feedback-box" id="feedbackBox">
+          <p id="feedbackTitle">Choose one answer.</p>
+          <small id="explanationText">The correct answer will be revealed after your choice.</small>
+        </div>
 
         <button class="next-button" id="nextButton" disabled>Next question →</button>
-      </div>
+      </section>
     </section>
 
     <section class="categories-section" id="categories">
       <div class="section-heading">
         <p class="eyebrow">Explore</p>
-        <h2>Choose your category</h2>
+        <h2>Quiz categories</h2>
       </div>
 
       <div class="category-grid">
-        <article class="category-card">
-          <span>🤔</span>
-          <h3>Would You Rather</h3>
-          <p>Two difficult choices. Only one answer.</p>
-        </article>
-        <article class="category-card">
-          <span>🧠</span>
-          <h3>Personality</h3>
-          <p>Discover what your choices say about you.</p>
-        </article>
-        <article class="category-card">
-          <span>⚡</span>
-          <h3>Quick Quiz</h3>
-          <p>Test your knowledge in a few seconds.</p>
-        </article>
-        <article class="category-card">
-          <span>😂</span>
-          <h3>Funny Choices</h3>
-          <p>Unexpected questions made for sharing.</p>
-        </article>
+        <article class="category-card"><span>🔬</span><h3>Science</h3><p>Physics, biology, space, and discoveries.</p></article>
+        <article class="category-card"><span>🌍</span><h3>Geography</h3><p>Countries, capitals, landmarks, and maps.</p></article>
+        <article class="category-card"><span>🏛️</span><h3>History</h3><p>Important people, dates, and civilizations.</p></article>
+        <article class="category-card"><span>⚽</span><h3>Sport</h3><p>Teams, competitions, athletes, and records.</p></article>
+        <article class="category-card"><span>🐾</span><h3>Animals</h3><p>Wildlife, nature, and surprising facts.</p></article>
+        <article class="category-card"><span>💻</span><h3>Technology</h3><p>Computers, inventions, internet, and AI.</p></article>
+      </div>
+    </section>
+
+    <section class="shorts-section">
+      <div>
+        <p class="eyebrow">Made for short videos</p>
+        <h2>One question can become content everywhere.</h2>
+        <p>
+          Every question can be reused as a vertical video: question, four answers,
+          countdown, correct-answer reveal, and a short explanation.
+        </p>
+      </div>
+
+      <div class="phone-preview">
+        <div class="phone-top">CHOOSE ONE ANSWER</div>
+        <div class="phone-question">Which ocean is the largest?</div>
+        <div class="phone-option">A. Atlantic Ocean</div>
+        <div class="phone-option correct">B. Pacific Ocean</div>
+        <div class="phone-option">C. Indian Ocean</div>
+        <div class="phone-option">D. Arctic Ocean</div>
+        <div class="phone-footer">Did you get it right?</div>
       </div>
     </section>
 
     <section class="about-section" id="about">
       <p class="eyebrow">About</p>
-      <h2>One question can start a conversation.</h2>
+      <h2>Learn something new in seconds.</h2>
       <p>
-        ChooseOneAnswer.com is a collection of short interactive questions designed
-        for TikTok, Instagram, Facebook, YouTube Shorts, and the web.
+        ChooseOneAnswer.com is a fast quiz platform where every challenge has one
+        question, four possible answers, and one correct choice.
       </p>
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 ChooseOneAnswer.com</p>
-  </footer>
+  <footer>© 2026 ChooseOneAnswer.com</footer>
 
   <script src="script.js"></script>
 </body>
