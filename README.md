@@ -26,3 +26,6 @@ git add .
 git commit -m "Match the reference dashboard design"
 git push
 ```
+
+
+Updated: social content preview cards were removed and the platform links were reorganized into one featured TikTok card above four secondary platform cards.
