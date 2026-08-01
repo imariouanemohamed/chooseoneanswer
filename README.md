@@ -29,3 +29,13 @@ git add .
 git commit -m "Fix quiz choices and unify design"
 git push
 ```
+
+
+## Latest update
+The social-media section is now fully integrated into the complete website and displayed in one vertical column in this order:
+
+1. YouTube
+2. Facebook
+3. Instagram
+4. TikTok
+5. X
