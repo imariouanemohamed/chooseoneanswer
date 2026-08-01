@@ -142,9 +142,9 @@ if (contactForm) {
       message
     ].join("\n");
 
-    const mailto = `mailto:contact@chooseoneanswer.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:chooseoneanswer@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    status.textContent = "Opening your email application...";
+    status.textContent = "Opening your email application with the message ready to send...";
     window.location.href = mailto;
   });
 }

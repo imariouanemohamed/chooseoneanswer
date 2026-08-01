@@ -34,6 +34,11 @@ The homepage now includes a complete contact form for:
 - Partnerships
 - General feedback
 
-Because this is a static Cloudflare Pages website, submitting the form opens the visitor's email application with the message prepared for `contact@chooseoneanswer.com`.
+Because this is a static Cloudflare Pages website, submitting the form opens the visitor's email application with the message prepared for `chooseoneanswer@gmail.com`.
 
 Change that destination in `script.js` if you use another email address.
+
+
+## Latest contact update
+- The form button now says **Send Email**.
+- Contact messages are addressed to **chooseoneanswer@gmail.com**.
