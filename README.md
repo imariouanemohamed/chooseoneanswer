@@ -21,3 +21,7 @@ git add .
 git commit -m "Apply final homepage form"
 git push
 ```
+
+
+## Latest update
+The fictional leaderboard was replaced by an honest Coming Soon roadmap.
