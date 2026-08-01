@@ -244,12 +244,58 @@
       </article>
     </section>
 
-    <section class="contact-strip" id="contact">
-      <div>
+    <section class="contact-section" id="contact">
+      <div class="contact-intro">
+        <p class="eyebrow">Contact us</p>
         <h2>Have a question suggestion?</h2>
-        <p>Send your idea and help us grow the quiz library.</p>
+        <p>
+          Suggest a quiz question, report an issue, propose a partnership,
+          or simply share your feedback.
+        </p>
+
+        <div class="contact-points">
+          <div><span>💡</span><p><strong>Suggest a question</strong><small>Send a question, four choices, and the correct answer.</small></p></div>
+          <div><span>✓</span><p><strong>Report a correction</strong><small>Help us keep quiz content clear and accurate.</small></p></div>
+          <div><span>🤝</span><p><strong>Work with us</strong><small>Contact us about content or promotional partnerships.</small></p></div>
+        </div>
       </div>
-      <a href="mailto:hello@chooseoneanswer.com">Contact us</a>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label>
+            Your name
+            <input id="contactName" name="name" type="text" placeholder="Enter your name" required>
+          </label>
+
+          <label>
+            Email address
+            <input id="contactEmail" name="email" type="email" placeholder="you@example.com" required>
+          </label>
+        </div>
+
+        <label>
+          Message type
+          <select id="contactType" name="type" required>
+            <option value="">Select a subject</option>
+            <option value="Question suggestion">Question suggestion</option>
+            <option value="Content correction">Content correction</option>
+            <option value="Partnership">Partnership</option>
+            <option value="General feedback">General feedback</option>
+          </select>
+        </label>
+
+        <label>
+          Your message
+          <textarea id="contactMessage" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        </label>
+
+        <div class="form-footer">
+          <p>Your email application will open with this message prepared.</p>
+          <button type="submit">Prepare Email →</button>
+        </div>
+
+        <p class="form-status" id="contactStatus" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 

@@ -115,3 +115,36 @@ document.getElementById("themeToggle").addEventListener("click",event=>{
 });
 
 renderQuestion();
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const type = document.getElementById("contactType").value;
+    const message = document.getElementById("contactMessage").value.trim();
+    const status = document.getElementById("contactStatus");
+
+    if (!name || !email || !type || !message) {
+      status.textContent = "Please complete all fields.";
+      return;
+    }
+
+    const subject = `[Choose One Answer] ${type}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Message type: ${type}`,
+      "",
+      message
+    ].join("\n");
+
+    const mailto = `mailto:contact@chooseoneanswer.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    status.textContent = "Opening your email application...";
+    window.location.href = mailto;
+  });
+}

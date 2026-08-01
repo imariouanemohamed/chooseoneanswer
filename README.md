@@ -25,3 +25,15 @@ git push
 
 ## Latest update
 The fictional leaderboard was replaced by an honest Coming Soon roadmap.
+
+
+## Contact form
+The homepage now includes a complete contact form for:
+- Question suggestions
+- Content corrections
+- Partnerships
+- General feedback
+
+Because this is a static Cloudflare Pages website, submitting the form opens the visitor's email application with the message prepared for `contact@chooseoneanswer.com`.
+
+Change that destination in `script.js` if you use another email address.
