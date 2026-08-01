@@ -47,7 +47,6 @@ function renderQuestion(){
   });
 
   updateTimer();
-
   timerId=setInterval(()=>{
     timeLeft--;
     updateTimer();
@@ -101,9 +100,9 @@ skipButton.addEventListener("click",nextQuestion);
 
 document.querySelectorAll("[data-category]").forEach(button=>{
   button.addEventListener("click",()=>{
-    const found=questions.findIndex(q=>q.category===button.dataset.category);
-    if(found>=0){
-      current=found;
+    const index=questions.findIndex(q=>q.category===button.dataset.category);
+    if(index>=0){
+      current=index;
       renderQuestion();
       document.getElementById("quiz").scrollIntoView({behavior:"smooth"});
     }
