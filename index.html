@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Choose One Answer — quick daily quizzes and social knowledge challenges.">
+  <meta name="description" content="Choose One Answer — fast daily quizzes and social knowledge challenges.">
   <title>Choose One Answer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,14 +12,14 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="Choose One Answer home">
+    <a class="brand" href="#home">
       <span class="brand-symbol" aria-hidden="true">
         <svg viewBox="0 0 72 72">
-          <path d="M34 8A28 28 0 0 0 10 28" />
-          <path d="M10 44A28 28 0 0 0 32 64" />
-          <path d="M40 8A28 28 0 0 1 62 27" />
-          <path d="M62 43A28 28 0 0 1 40 64" />
-          <path class="one" d="M31 27l8-6v29" />
+          <path d="M34 8A28 28 0 0 0 10 28"/>
+          <path d="M10 44A28 28 0 0 0 32 64"/>
+          <path d="M40 8A28 28 0 0 1 62 27"/>
+          <path d="M62 43A28 28 0 0 1 40 64"/>
+          <path class="one" d="M31 27l8-6v29"/>
         </svg>
       </span>
       <span class="brand-copy">
@@ -31,203 +31,164 @@
     <nav>
       <a class="active" href="#home">Home</a>
       <a href="#categories">Categories</a>
-      <a href="#daily">Daily Quiz</a>
+      <a href="#quiz">Daily Quiz</a>
       <a href="#social">Social</a>
       <a href="#about">About</a>
     </nav>
 
-    <div class="header-actions"><button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch color theme">◐</button><a class="play-button" href="#daily">Start Quiz <span>⚡</span></a></div>
+    <div class="top-actions">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
+      <a href="#quiz" class="top-cta">Start Quiz ⚡</a>
+    </div>
   </header>
 
   <main id="home">
-    <section class="dashboard">
-      <aside class="hero-panel">
+    <section class="hero-layout">
+      <aside class="hero-copy">
+        <p class="eyebrow">Daily knowledge challenge</p>
         <h1>One<br>Question.<br><span>One</span> Correct<br>Answer.</h1>
-        <div class="short-line"></div>
-        <p>
-          Test your knowledge with quick daily quizzes across many topics.
-          Learn, challenge yourself, and have fun!
-        </p>
-
+        <p>Test your knowledge, learn something new every day, and challenge your friends.</p>
         <div class="hero-actions">
-          <a class="primary-action" href="#daily">Start the quiz <span>→</span></a>
-          <a class="secondary-action" href="#categories">Browse Categories</a>
+          <a href="#quiz" class="button primary">Start Quiz</a>
+          <a href="#categories" class="button secondary">Browse Categories</a>
         </div>
-
-        <div class="quick-stats">
-          <div class="stat">
-            <span class="stat-icon purple-icon">◴</span>
-            <div><strong>10 sec</strong><small>per question</small></div>
-          </div>
-          <div class="stat">
-            <span class="stat-icon green-icon">♣</span>
-            <div><strong>6+</strong><small>categories</small></div>
-          </div>
-          <div class="stat">
-            <span class="stat-icon yellow-icon">★</span>
-            <div><strong>Daily</strong><small>new quiz</small></div>
-          </div>
-        </div>
-
-        <div class="hero-decoration" aria-hidden="true"></div>
       </aside>
 
-      <section class="quiz-card" id="daily" aria-live="polite">
-        <div class="quiz-head">
+      <section class="quiz-card" id="quiz" aria-live="polite">
+        <div class="quiz-header">
           <span class="category-pill" id="categoryLabel">Science</span>
-          <span id="questionCounter">Question 1 of 6</span>
+          <span id="questionCounter">Question 1 of 8</span>
         </div>
 
-        <div class="quiz-title-row">
+        <div class="question-grid">
           <div>
             <h2 id="questionText">Which planet is known as the Red Planet?</h2>
           </div>
           <div class="planet-wrap" aria-hidden="true">
-            <div class="planet">
-              <span class="spot s1"></span>
-              <span class="spot s2"></span>
-              <span class="spot s3"></span>
-              <span class="spot s4"></span>
-              <span class="spot s5"></span>
-            </div>
-            <span class="spark sp1">✦</span>
-            <span class="spark sp2">✦</span>
-            <span class="spark sp3">✦</span>
+            <div class="planet"></div>
           </div>
         </div>
 
-        <div class="answers" id="answerGrid"></div>
-
         <div class="timer-row">
-          <div class="timer-copy">
-            <span class="clock">◷</span>
-            <span>Time left</span>
-            <strong><span id="timer">10</span></strong>
-            <small>sec</small>
-          </div>
+          <div class="timer-copy">◷ Time left <strong><span id="timer">10</span></strong> sec</div>
           <div class="progress"><div id="timerFill"></div></div>
         </div>
 
+        <div class="answer-list" id="answerGrid"></div>
+
         <div class="feedback-box">
-          <div class="check-dot">✓</div>
+          <span class="feedback-icon">✓</span>
           <div>
             <strong id="feedbackTitle">Choose one answer.</strong>
             <p id="explanationText">The answer and explanation will appear here.</p>
           </div>
         </div>
 
-        <button class="next-button" id="nextButton" disabled>Next question <span>→</span></button>
+        <div class="quiz-actions">
+          <button id="skipButton" class="skip-button" type="button">Skip</button>
+          <button id="nextButton" class="next-button" type="button" disabled>Next Question →</button>
+        </div>
       </section>
 
-      <aside class="right-panel" id="social">
-        <section class="social-focus">
+      <aside class="social-panel" id="social">
+        <div class="section-title">
           <h3>FOLLOW US</h3>
           <p>Choose your favorite platform and follow the daily challenge.</p>
+        </div>
 
-          <div class="social-layout">
-            <a class="social-featured" href="https://www.tiktok.com/@chooseoneanswer" target="_blank" rel="noopener noreferrer">
-              <span class="social-main-icon tiktok-main">♪</span>
-              <div>
-                <strong>TikTok</strong>
-                <small>@chooseoneanswer</small>
-              </div>
-            </a>
+        <a class="featured-social" href="https://www.tiktok.com/@chooseoneanswer" target="_blank" rel="noopener noreferrer">
+          <span class="platform-icon tiktok">♪</span>
+          <div><strong>TikTok</strong><small>@chooseoneanswer</small></div>
+        </a>
 
-            <div class="social-secondary-grid">
-              <a href="https://www.instagram.com/chooseone.answer" target="_blank" rel="noopener noreferrer">
-                <span class="social-main-icon instagram-main">◎</span>
-                <div><strong>Instagram</strong><small>@chooseone.answer</small></div>
-              </a>
-
-              <a href="https://www.youtube.com/@chooseoneanswer" target="_blank" rel="noopener noreferrer">
-                <span class="social-main-icon youtube-main">▶</span>
-                <div><strong>YouTube</strong><small>@chooseoneanswer</small></div>
-              </a>
-
-              <a href="https://www.facebook.com/profile.php?id=61592314457725" target="_blank" rel="noopener noreferrer">
-                <span class="social-main-icon facebook-main">f</span>
-                <div><strong>Facebook</strong><small>Official page</small></div>
-              </a>
-
-              <a href="https://x.com/ChooseoneAnswr" target="_blank" rel="noopener noreferrer">
-                <span class="social-main-icon x-main">𝕏</span>
-                <div><strong>X</strong><small>@ChooseoneAnswr</small></div>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section class="community-block">
-          <h3>JOIN THE COMMUNITY</h3>
-          <p>
-            Follow, answer, comment, and challenge your friends.
-            New questions will be shared across all our social platforms.
-          </p>
-        </section>
-
-        <section class="newsletter">
-          <div class="mail-icon">✉</div>
-          <div class="newsletter-copy">
-            <strong>Never miss a new challenge</strong>
-            <p>Get daily quizzes and updates straight to your inbox.</p>
-            <form id="newsletterForm">
-              <input type="email" placeholder="Your email address" aria-label="Your email address" required>
-              <button type="submit">Subscribe</button>
-            </form>
-            <small id="newsletterMessage"></small>
-          </div>
-        </section>
+        <div class="social-grid">
+          <a href="https://www.instagram.com/chooseone.answer" target="_blank" rel="noopener noreferrer">
+            <span class="platform-icon instagram">◎</span>
+            <div><strong>Instagram</strong><small>@chooseone.answer</small></div>
+          </a>
+          <a href="https://www.youtube.com/@chooseoneanswer" target="_blank" rel="noopener noreferrer">
+            <span class="platform-icon youtube">▶</span>
+            <div><strong>YouTube</strong><small>@chooseoneanswer</small></div>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61592314457725" target="_blank" rel="noopener noreferrer">
+            <span class="platform-icon facebook">f</span>
+            <div><strong>Facebook</strong><small>Official page</small></div>
+          </a>
+          <a href="https://x.com/ChooseoneAnswr" target="_blank" rel="noopener noreferrer">
+            <span class="platform-icon x">𝕏</span>
+            <div><strong>X</strong><small>@ChooseoneAnswr</small></div>
+          </a>
+        </div>
       </aside>
     </section>
 
-    <section class="bottom-features" id="categories">
-      <article><span class="feature-circle purple-bg">♟</span><div><strong>Learn & Improve</strong><p>Every answer comes with explanations to help you learn.</p></div></article>
-      <article><span class="feature-circle pink-bg">🏆</span><div><strong>Challenge Others</strong><p>Compete with friends and see who gets the right answer.</p></div></article>
-      <article><span class="feature-circle yellow-bg">🔥</span><div><strong>Fun & Engaging</strong><p>Short quizzes, exciting topics, and endless learning.</p></div></article>
-      <article><span class="feature-circle blue-bg">◆</span><div><strong>Reliable & Accurate</strong><p>High-quality questions reviewed for clarity.</p></div></article>
+    <section class="feature-strip">
+      <article><span>♟</span><div><strong>Learn & Improve</strong><p>Every answer includes a clear explanation.</p></div></article>
+      <article><span>🏆</span><div><strong>Challenge Others</strong><p>Compare your score with friends.</p></div></article>
+      <article><span>🔥</span><div><strong>Fun & Engaging</strong><p>Short quizzes across many topics.</p></div></article>
+      <article><span>◆</span><div><strong>Reliable & Clear</strong><p>Questions designed for learning.</p></div></article>
     </section>
 
-
-    <section class="extra-section categories-premium" id="categories">
-      <div class="categories-topline">
-        <div class="extra-heading">
-          <p class="extra-eyebrow">EXPLORE TOPICS</p>
+    <section class="categories-section" id="categories">
+      <div class="categories-heading">
+        <div>
+          <p class="eyebrow">Explore topics</p>
           <h2>Choose your category</h2>
         </div>
-        <p>With 1,000+ questions across 6 topics</p>
+        <p>More than 1,000 questions across 6 topics</p>
       </div>
-      <div class="category-browser premium-grid">
-        <button data-category="Science" class="category-card science-card"><span class="category-emoji">🔬</span><strong>Science</strong><small>245 Questions</small><p>Space, biology, physics & more</p><b>Start Quiz <span>→</span></b></button>
-        <button data-category="Geography" class="category-card geography-card"><span class="category-emoji">🌍</span><strong>Geography</strong><small>180 Questions</small><p>Countries, capitals, landmarks</p><b>Start Quiz <span>→</span></b></button>
-        <button data-category="History" class="category-card history-card"><span class="category-emoji">🏛️</span><strong>History</strong><small>220 Questions</small><p>People, dates, civilizations</p><b>Start Quiz <span>→</span></b></button>
-        <button data-category="Sport" class="category-card sport-card"><span class="category-emoji">⚽</span><strong>Sport</strong><small>190 Questions</small><p>Teams, athletes, records</p><b>Start Quiz <span>→</span></b></button>
-        <button data-category="Animals" class="category-card animals-card"><span class="category-emoji">🐾</span><strong>Animals</strong><small>165 Questions</small><p>Wildlife, nature, amazing facts</p><b>Start Quiz <span>→</span></b></button>
-        <button data-category="Technology" class="category-card technology-card"><span class="category-emoji">💻</span><strong>Technology</strong><small>130 Questions</small><p>Computers, internet, AI</p><b>Start Quiz <span>→</span></b></button>
+
+      <div class="category-grid">
+        <button class="category-card science" data-category="Science">
+          <span class="category-icon">🔬</span>
+          <div class="category-title-row"><strong>Science</strong><small>245 questions</small></div>
+          <p>Space, biology, physics, and discoveries.</p>
+          <span class="category-link">Start Quiz →</span>
+        </button>
+
+        <button class="category-card geography" data-category="Geography">
+          <span class="category-icon">🌍</span>
+          <div class="category-title-row"><strong>Geography</strong><small>180 questions</small></div>
+          <p>Countries, capitals, maps, and landmarks.</p>
+          <span class="category-link">Start Quiz →</span>
+        </button>
+
+        <button class="category-card history" data-category="History">
+          <span class="category-icon">🏛️</span>
+          <div class="category-title-row"><strong>History</strong><small>220 questions</small></div>
+          <p>People, dates, empires, and civilizations.</p>
+          <span class="category-link">Start Quiz →</span>
+        </button>
+
+        <button class="category-card sport" data-category="Sport">
+          <span class="category-icon">⚽</span>
+          <div class="category-title-row"><strong>Sport</strong><small>190 questions</small></div>
+          <p>Teams, athletes, competitions, and records.</p>
+          <span class="category-link">Start Quiz →</span>
+        </button>
+
+        <button class="category-card animals" data-category="Animals">
+          <span class="category-icon">🐾</span>
+          <div class="category-title-row"><strong>Animals</strong><small>165 questions</small></div>
+          <p>Wildlife, habitats, nature, and facts.</p>
+          <span class="category-link">Start Quiz →</span>
+        </button>
+
+        <button class="category-card technology" data-category="Technology">
+          <span class="category-icon">💻</span>
+          <div class="category-title-row"><strong>Technology</strong><small>130 questions</small></div>
+          <p>Computers, the internet, innovation, and AI.</p>
+          <span class="category-link">Start Quiz →</span>
+        </button>
       </div>
     </section>
 
-    <section class="leaderboard-section" id="leaderboard">
-      <div class="extra-heading">
-        <p class="extra-eyebrow">WEEKLY RANKING</p>
-        <h2>Top quiz players</h2>
-        <p>A preview of the community leaderboard planned for the full platform.</p>
-      </div>
-      <div class="leaderboard-card">
-        <div class="leader-row champion"><span>1</span><div><strong>QuizMaster</strong><small>48 correct answers</small></div><b>980 pts</b></div>
-        <div class="leader-row"><span>2</span><div><strong>BrightMind</strong><small>45 correct answers</small></div><b>930 pts</b></div>
-        <div class="leader-row"><span>3</span><div><strong>FactHunter</strong><small>41 correct answers</small></div><b>870 pts</b></div>
-        <div class="leader-row"><span>4</span><div><strong>DailyLearner</strong><small>39 correct answers</small></div><b>820 pts</b></div>
-      </div>
+    <section class="footer-stats" id="about">
+      <div><strong>1,000+</strong><small>Questions</small></div>
+      <div><strong>10K+</strong><small>Players</small></div>
+      <div><strong>50K+</strong><small>Quizzes Completed</small></div>
+      <div><strong>Daily</strong><small>New Questions</small></div>
     </section>
-
-    <section class="stats-footer">
-      <div><span>?</span><strong>1,000+</strong><small>Questions</small></div>
-      <div><span>♧</span><strong>10K+</strong><small>Players</small></div>
-      <div><span>🏆</span><strong>50K+</strong><small>Quizzes Completed</small></div>
-      <div><span>▣</span><strong>New</strong><small>Questions Daily</small></div>
-      <form id="newsletterFooterForm"><label>Get daily quizzes & updates</label><div><input type="email" placeholder="Enter your email" required><button>Subscribe</button></div><small id="newsletterFooterMessage"></small></form>
-    </section>
-
   </main>
 
   <script src="script.js"></script>
