@@ -1,34 +1,26 @@
-# ChooseOneAnswer.com — FormSubmit Contact Version
+# ChooseOneAnswer.com — FormSubmit Success Version
 
-This is the complete website package.
+This complete website uses the same contact solution as MechanicsProfessor.com.
 
-## Contact form
+## How it works
 
-The contact form uses the same FormSubmit solution used for MechanicsProfessor.com.
+1. The visitor completes the form.
+2. FormSubmit sends the message to `chooseoneanswer@gmail.com`.
+3. The visitor is redirected back to:
+   `https://chooseoneanswer.com/?contact=success#contact`
+4. The website displays:
 
-Messages are sent to:
+   **Message sent successfully!**
 
-`chooseoneanswer@gmail.com`
+## First activation
 
-The form submits directly from the website. It does not open the visitor's email application.
-
-### Important first activation
-
-The first submitted message may trigger an activation email from FormSubmit.
-Open `chooseoneanswer@gmail.com` and confirm the form once. After confirmation,
-future messages will be delivered normally.
-
-## Included files
-
-- `index.html`
-- `styles.css`
-- `script.js`
-- `README.md`
+FormSubmit may send a one-time activation email to `chooseoneanswer@gmail.com`.
+Confirm it once before testing again.
 
 ## Publish
 
 ```bash
 git add .
-git commit -m "Use FormSubmit contact form"
+git commit -m "Add contact success confirmation"
 git push
 ```

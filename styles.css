@@ -220,3 +220,45 @@
   cursor: wait;
   transform: none;
 }
+
+
+.contact-success {
+  display: none;
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #9edbb8;
+  border-radius: 13px;
+  background: #eaf8f0;
+  color: #145c35;
+}
+
+.contact-success.is-visible {
+  display: grid;
+}
+
+.contact-success-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #12b76a;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.contact-success strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: .9rem;
+}
+
+.contact-success p {
+  margin: 0;
+  font-size: .72rem;
+  line-height: 1.5;
+}

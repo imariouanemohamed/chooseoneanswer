@@ -260,13 +260,22 @@
         </div>
       </div>
 
+      <div id="contactSuccess" class="contact-success" role="status" aria-live="polite">
+        <span class="contact-success-icon">✓</span>
+        <div>
+          <strong>Message sent successfully!</strong>
+          <p>Thank you for contacting Choose One Answer. We will reply as soon as possible.</p>
+        </div>
+      </div>
+
       <form class="contact-form"
               id="contactForm"
               action="https://formsubmit.co/chooseoneanswer@gmail.com"
               method="POST">
         <input type="hidden" name="_subject" value="New message from ChooseOneAnswer.com">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://chooseoneanswer.com/#contact">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://chooseoneanswer.com/?contact=success#contact">
         <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <label>

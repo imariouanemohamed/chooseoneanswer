@@ -135,3 +135,27 @@ if (contactForm) {
     }
   });
 }
+
+
+const contactParams = new URLSearchParams(window.location.search);
+
+if (contactParams.get("contact") === "success") {
+  const successMessage = document.getElementById("contactSuccess");
+  const contactSection = document.getElementById("contact");
+
+  if (successMessage) {
+    successMessage.classList.add("is-visible");
+  }
+
+  if (contactSection) {
+    setTimeout(() => {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+  }
+
+  history.replaceState(
+    {},
+    document.title,
+    window.location.pathname + "#contact"
+  );
+}
