@@ -92,3 +92,6 @@ document.getElementById("newsletterForm").addEventListener("submit",(event)=>{
 });
 
 render();\n\n// Premium navigation and theme behavior\nconst themeToggle=document.getElementById("themeToggle");\nif(themeToggle){\n  themeToggle.addEventListener("click",()=>{\n    document.body.classList.toggle("dark");\n    themeToggle.textContent=document.body.classList.contains("dark")?"☀":"◐";\n  });\n}\n\ndocument.querySelectorAll("[data-category]").forEach(button=>{\n  button.addEventListener("click",()=>{\n    const category=button.dataset.category;\n    const index=questions.findIndex(question=>question.category===category);\n    if(index>=0){\n      current=index;\n      render();\n      document.getElementById("daily").scrollIntoView({behavior:"smooth"});\n    }\n  });\n});\n
+
+const footerForm=document.getElementById("newsletterFooterForm");
+if(footerForm){footerForm.addEventListener("submit",event=>{event.preventDefault();document.getElementById("newsletterFooterMessage").textContent="Thank you. You are subscribed.";event.currentTarget.reset();});}
