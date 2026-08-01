@@ -260,22 +260,29 @@
         </div>
       </div>
 
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form"
+              id="contactForm"
+              action="https://formsubmit.co/chooseoneanswer@gmail.com"
+              method="POST">
+        <input type="hidden" name="_subject" value="New message from ChooseOneAnswer.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://chooseoneanswer.com/#contact">
+        <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <label>
             Your name
-            <input id="contactName" name="name" type="text" placeholder="Enter your name" required>
+            <input id="contactName" name="Name" type="text" placeholder="Enter your name" required>
           </label>
 
           <label>
             Email address
-            <input id="contactEmail" name="email" type="email" placeholder="you@example.com" required>
+            <input id="contactEmail" name="Email" type="email" placeholder="you@example.com" required>
           </label>
         </div>
 
         <label>
           Message type
-          <select id="contactType" name="type" required>
+          <select id="contactType" name="Message type" required>
             <option value="">Select a subject</option>
             <option value="Question suggestion">Question suggestion</option>
             <option value="Content correction">Content correction</option>
@@ -286,11 +293,11 @@
 
         <label>
           Your message
-          <textarea id="contactMessage" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+          <textarea id="contactMessage" name="Message" rows="6" placeholder="Write your message here..." required></textarea>
         </label>
 
         <div class="form-footer">
-          <p>Your default email application will open with your message ready to send.</p>
+          <p>Your message will be sent securely to the Choose One Answer team.</p>
           <button type="submit">Send Email →</button>
         </div>
 
